@@ -36,7 +36,7 @@ The programs in the root directory:
 - PSNR.m : the Peak Signal-to-Noise Ratio between two images
 - SSIM.m : the Structural Similarity between two images
 
-## Misc Nots
+## Misc Notes
 If you use this code, please cite
 ```text
 @article{fu2019reciprocal,
