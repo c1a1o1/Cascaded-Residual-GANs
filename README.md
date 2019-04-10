@@ -1,5 +1,6 @@
 # Cascaded-Residual-GANs
 
+## Network Architecture
 The proposed framework is shown in the figure. It has two reciprocal directions of translation, i.e. SAR to Optical and Optical to SAR. Each direction consists of two adversarial deep networks, i.e. a multi-scale convolutional encoder-and-decoder network as the translator (generator) vs. a convolutional network as the discriminator. The translator takes in SAR image, maps it to the latent space via the encoder, and then remaps it to a translated optical image. The discriminator takes in both the translated optical image and the true optical image which is co-registered with the original SAR image, and outputs the classification results. The discriminator learns to identify the translated optical images from the true optical images, while the translator network learns to convert the SAR image to an optical image as realistic as possible to fool the discriminator. On the other direction, the network is constructed exactly in the same manner with the only difference being optical as input and SAR as translated image.
 ![Supervised learning diagram](https://github.com/Shilling818/Cascaded-Residual-GANs/blob/master/image_fold/Supervised%20learning.png)
 
@@ -13,34 +14,29 @@ Two pairs of translated results are shown in the figure.
 ![Translated results](https://github.com/Shilling818/Cascaded-Residual-GANs/blob/master/image_fold/results.png)
 
 
-loss.py : the definition of some loss functions
-
-model.py : the definition of some model functions
-
-network.py : the network architecture of our proposed cascaded residual GAN
+## Programs
+The programs in the root directory:
+- loss.py : the definition of some loss functions
+- model.py : the definition of some model functions
+- network.py : the network architecture of our proposed cascaded residual GAN
 
 
 ./Comparsion with existing translation networks (some mainstream networks for comparison)
- network_CycleGAN_Comp.py : the CycleGAN architecture
- 
- network_U-Net_Comp.py : the U-Net architecture
- 
- network_WGAN_Comp.py : the WGAN architecture
+- network_CycleGAN_Comp.py : the CycleGAN architecture
+- network_U-Net_Comp.py : the U-Net architecture
+- network_WGAN_Comp.py : the WGAN architecture
 
 
 ./Enhancement with unsupervised Learning (developed for unsupervised learning and indeed improve the performance of translation results)
 
 
 ./Evaluation (some metrics for evaluting the translation results)
+- fid.py : Fréchet inception distance between two datasets
+- l1.m : the L1-distance between two images
+- PSNR.m : the Peak Signal-to-Noise Ratio between two images
+- SSIM.m : the Structural Similarity between two images
 
- fid.py : Fréchet inception distance between two datasets
- 
- l1.m : the L1-distance between two images
- 
- PSNR.m : the Peak Signal-to-Noise Ratio between two images
- 
- SSIM.m : the Structural Similarity between two images
-
+## Misc Nots
 If you use this code, please cite
 ```text
 @article{fu2019reciprocal,
