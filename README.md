@@ -14,12 +14,17 @@ Two pairs of translated results are shown in the figure.
 
 
 loss.py : the definition of some loss functions
+
 model.py : the definition of some model functions
+
 network.py : the network architecture of our proposed cascaded residual GAN
+
 
 ./Comparsion with existing translation networks (some mainstream networks for comparison)
  network_CycleGAN_Comp.py : the CycleGAN architecture
+ 
  network_U-Net_Comp.py : the U-Net architecture
+ 
  network_WGAN_Comp.py : the WGAN architecture
 
 
@@ -27,9 +32,13 @@ network.py : the network architecture of our proposed cascaded residual GAN
 
 
 ./Evaluation (some metrics for evaluting the translation results)
+
  fid.py : Fréchet inception distance between two datasets
+ 
  l1.m : the L1-distance between two images
+ 
  PSNR.m : the Peak Signal-to-Noise Ratio between two images
+ 
  SSIM.m : the Structural Similarity between two images
 
 If you use this code, please cite
